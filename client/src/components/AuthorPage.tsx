@@ -17,7 +17,7 @@ export default function AuthorPage() {
         <>
             <Box sx={{ textAlign: 'center', marginBottom: 4 }}>
                 <Typography variant="h5" align="center" gutterBottom>
-                    OTHER AUTHOR'S RECIPES
+                    OTHER {name}'s RECIPES
                 </Typography>
 
                 <Button
