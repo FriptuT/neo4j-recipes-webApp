@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "M:\\CAPYHON EXERCISE\\API\\",
+  "WorkspaceRootPath": "M:\\CAPYHON EXERCISE\\neo4j-recipes-webApp\\API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC03167C-CD78-4541-AC97-240E728183C8}|API.csproj|m:\\capyhon exercise\\api\\controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC03167C-CD78-4541-AC97-240E728183C8}|API.csproj|m:\\capyhon exercise\\neo4j-recipes-webapp\\api\\controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC03167C-CD78-4541-AC97-240E728183C8}|API.csproj|solutionrelative:controllers\\recipecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "RecipeController.cs",
-              "DocumentMoniker": "M:\\CAPYHON EXERCISE\\API\\Controllers\\RecipeController.cs",
+              "DocumentMoniker": "M:\\CAPYHON EXERCISE\\neo4j-recipes-webApp\\API\\Controllers\\RecipeController.cs",
               "RelativeDocumentMoniker": "Controllers\\RecipeController.cs",
-              "ToolTip": "M:\\CAPYHON EXERCISE\\API\\Controllers\\RecipeController.cs",
+              "ToolTip": "M:\\CAPYHON EXERCISE\\neo4j-recipes-webApp\\API\\Controllers\\RecipeController.cs",
               "RelativeToolTip": "Controllers\\RecipeController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAmwDYAAAA3AAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAmwDoAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-20T15:44:42.943Z",
               "EditorCaption": ""

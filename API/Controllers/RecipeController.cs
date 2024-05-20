@@ -19,7 +19,7 @@ namespace API.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Get(string name = null)
+        public async Task<IActionResult> Get(string name = null, int page = 1, int pageSize = 300)
         {
             // name, author, nr_ingredients, skillLevel
             var recipes = new List<Recipe>();
@@ -38,16 +38,25 @@ namespace API.Controllers
                     queryBuilder.Append(" WHERE r.name CONTAINS $name");
                 }
 
+                // if (ingredients != null && ingredients.Count > 0)
+                // {
+                //     queryBuilder.Append(name == null ? " WHERE" : " AND");
+                //     queryBuilder.Append(" ingredient.name IN $ingredients");
+                // }
+
                 queryBuilder.Append(@"
                 RETURN r.id as ID,r.name AS Nume, autor.name AS Author, COUNT(how_manny) AS numberOfIngredients, r.skillLevel AS skillLevel
-                LIMIT 16
+                SKIP $skip LIMIT $limit
                 ");
 
                 var query = queryBuilder.ToString();
 
                 var parameters = new Dictionary<string, object>
                 {
-                    { "name", name }
+                    { "name", name },
+                    { "skip", (page - 1) * pageSize },
+                    { "limit", pageSize }
+                    // { "ingredients", ingredients }
                 };
 
                 var queryResult = await tx.RunAsync(query, parameters);

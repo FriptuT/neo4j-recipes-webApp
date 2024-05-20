@@ -12,7 +12,7 @@ const requests = {
 
 
 const Recipes = {
-    getAll: (name?: string) => requests.get("recipe", { name }),
+    getAll: (params:any) => requests.get("recipe", params),
     getOne: (id: string) => requests.get(`recipe/${id}`)
 }
 
