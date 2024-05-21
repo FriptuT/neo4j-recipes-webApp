@@ -6,7 +6,7 @@ export default function Header() {
 
     return (
         <>
-            <AppBar position="static" sx={{ mr: 0, backgroundColor: 'black' }}>
+            <AppBar position="static" sx={{ mr: 0, backgroundColor: '#808080' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: "flex" }}>
 

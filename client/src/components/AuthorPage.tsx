@@ -16,23 +16,23 @@ export default function AuthorPage() {
     return (
         <>
             <Box sx={{ textAlign: 'center', marginBottom: 4 }}>
-                <Typography variant="h5" align="center" gutterBottom>
+                <Typography variant="h5" align="center" gutterBottom sx={{ color: '#FDA7A7', fontWeight: 'bold' }}>
                     OTHER {name}'s RECIPES
                 </Typography>
 
                 <Button
                     component={Link}
                     to={'/'}
-                    sx={{ marginTop: 2, backgroundColor: 'gray', color: 'white', '&:hover': { backgroundColor: 'blue', color: 'white' } }}
+                    sx={{ backgroundColor: 'lightcoral', color: 'white', mt: 2, '&:hover': { backgroundColor: 'lightblue', color: 'black' } }}
                 >
                     Back to Recipes
                 </Button>
 
-                <TableContainer component={Paper} sx={{ border: '2px solid blue' }}>
+                <TableContainer component={Paper} sx={{ border: '7px solid lightblue' }}>
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell sx={{ color: 'red', fontWeight: 'bold' }}>Recipe Name</TableCell>
+                                <TableCell sx={{ color: '#FDA7A7', fontWeight: 'bold' }}>Recipe Name</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>

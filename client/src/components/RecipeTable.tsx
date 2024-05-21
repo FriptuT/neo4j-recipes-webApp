@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import agent from "../api/agent";
 import { Recipe } from "../models/Recipe";
 import { Link } from "react-router-dom";
+import { green } from "@mui/material/colors";
 
 
 
@@ -64,28 +65,38 @@ export default function RecipeTable() {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>ID</TableCell>
-                            <TableCell>Name</TableCell>
-                            <TableCell align="right">Author</TableCell>
-                            <TableCell align="right">numberOfIngredients</TableCell>
-                            <TableCell align="right">SkillLevel</TableCell>
+                            <TableCell sx={{ color: '#808080', fontWeight:'bold'}}>ID</TableCell>
+                            <TableCell sx={{ color: '#808080' , fontWeight:'bold'}}>Name</TableCell>
+                            <TableCell align="right" sx={{ color: '#808080' , fontWeight:'bold'}}>Author</TableCell>
+                            <TableCell align="right" sx={{ color: '#808080' , fontWeight:'bold'}}>numberOfIngredients</TableCell>
+                            <TableCell align="right" sx={{ color: '#808080' , fontWeight:'bold'}}>SkillLevel</TableCell>
                         </TableRow>
                     </TableHead>
-                    <TableBody>
+                    <TableBody sx={{border: '7px solid lightblue'}}>
                         {recipes.map((recipe) => (
                             <TableRow
                                 key={recipe.name}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell align="right">{recipe.id}</TableCell>
-                                <TableCell component="th" scope="row">
-                                    <Button component={Link} to={`/details/${recipe.id}`}>{recipe.name}</Button>
+                                <TableCell align="right" sx={{ color:'#808080', fontWeight: 'bold', borderBottom:'3px solid lightblue' }}>{recipe.id}</TableCell>
+                                <TableCell component="th" scope="row" sx={{ borderBottom:'3px solid lightblue' }}>
+                                    <Button 
+                                    title="RECIPE DETAILS"
+                                    component={Link} 
+                                    to={`/details/${recipe.id}`}
+                                    sx={{ backgroundColor: 'lightcoral', color: 'white', mt: 2, '&:hover': { backgroundColor: 'lightblue', color: '#72613E' } }}
+                                    >{recipe.name}</Button>
                                 </TableCell>
-                                <TableCell align="right">
-                                    <Button component={Link} to={`/authors/${recipe.author}`}>{recipe.author}</Button>
+                                <TableCell align="right" sx={{ borderBottom:'3px solid lightblue' }}>
+                                    <Button 
+                                    title="OTHER RECIPES"
+                                    component={Link} 
+                                    to={`/authors/${recipe.author}`}
+                                    sx={{ backgroundColor: 'lightcoral', color: 'white', mt: 2, '&:hover': { backgroundColor: 'lightblue', color: '#72613E' } }}
+                                    >{recipe.author}</Button>
                                 </TableCell>
-                                <TableCell align="right">{recipe.nr_ingredients}</TableCell>
-                                <TableCell align="right">{recipe.skillLevel}</TableCell>
+                                <TableCell align="right" sx={{ borderBottom:'3px solid lightblue', color:'#808080', fontWeight: 'bold' }}>{recipe.nr_ingredients}</TableCell>
+                                <TableCell align="right" sx={{ borderBottom:'3px solid lightblue', color:'#808080', fontWeight: 'bold' }}>{recipe.skillLevel}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
