@@ -1,8 +1,8 @@
-import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, Grid, TextField, Chip, Box, TableFooter, TablePagination } from "@mui/material";
+import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Button, Grid, TextField, Box, TableFooter, TablePagination } from "@mui/material";
 import { useEffect, useState } from "react";
 import agent from "../api/agent";
 import { Recipe } from "../models/Recipe";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
@@ -12,11 +12,6 @@ export default function RecipeTable() {
     const [searchName, setSearchName] = useState('');
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(20);
-
-
-    // state for filtering
-    // const [ingredient, setIngredient] = useState('');
-    // const [ingredients, setIngredients] = useState<string[]>([]);
 
 
     const fetchRecipes = async (name: string, page: number, pageSize: number) => {
@@ -42,57 +37,27 @@ export default function RecipeTable() {
         setPage(0);
     };
 
-    // functions for filtering by ingredients
-    // const AddIngredient = () => {
-    //     if (ingredient && !ingredients.includes(ingredient)) {
-    //         setIngredients([...ingredients, ingredient]);
-    //         setIngredient('');
-    //     }
-    // };
-
-    // const RemoveIngredient = (ingredientToRemove: any) => {
-    //     setIngredients(ingredients.filter(i => i !== ingredientToRemove));
-    // }
-
-    // const handleKeyDown = (e: any) => {
-    //     if (e.key === 'Enter') {
-    //         AddIngredient();
-    //     }
-    // };
 
     return (
         <Grid container spacing={1}>
             <Grid item xs={3}>
-                <Paper sx={{ mb: 2, mt: 1 }}>
-                    <TextField
-                        label='Search recipes'
-                        variant='outlined'
-                        fullWidth
-                        value={searchName}
-                        onChange={(e) => setSearchName(e.target.value)}
-                    />
-                    {/* <TextField
-                        label='Add ingredient filter'
-                        variant='outlined'
-                        fullWidth
-                        value={ingredient}
-                        onChange={(e) => setIngredient(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                    />
-                    <Button onClick={AddIngredient} variant="contained" sx={{ mt: 2 }}>
-                        Add Ingredient
-                    </Button>
-                    <Box sx={{ mt: 2 }}>
-                        {ingredients.map((ing, index) => (
-                            <Chip
-                                key={index}
-                                label={ing}
-                                onDelete={() => RemoveIngredient(ing)}
-                                sx={{ m: 0.5 }}
-                            />
-                        ))}
-                    </Box> */}
-                </Paper>
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    minWidth="170vh"
+                >
+                    <Paper sx={{ mb: 2, mt: 1, width: 390 }}>
+                        <TextField
+                            label='Search in Teo recipes list ...'
+                            variant='outlined'
+                            fullWidth
+                            value={searchName}
+                            onChange={(e) => setSearchName(e.target.value)}
+                        />
+
+                    </Paper>
+                </Box>
             </Grid>
 
             <TableContainer component={Paper}>
