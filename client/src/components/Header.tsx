@@ -1,5 +1,6 @@
 import { AppBar, Container, Toolbar, Typography, Box, Tooltip, IconButton, Avatar } from "@mui/material";
 import { Link } from "react-router-dom";
+import './Header.css'
 
 
 export default function Header() {
@@ -33,7 +34,7 @@ export default function Header() {
                                 textDecoration: 'none',
                             }}
                         >
-                           Teo's Recipes
+                           <span className="red">Teo</span><span className="yellow">'s Rec</span><span className="blue">ipes</span>
                         </Typography>
 
 
